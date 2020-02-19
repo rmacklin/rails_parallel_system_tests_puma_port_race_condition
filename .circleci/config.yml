@@ -33,20 +33,20 @@ jobs:
             - ./vendor/bundle
           key: v1-ruby-dependencies-{{ checksum "Gemfile.lock" }}
 
-      - restore_cache:
-          keys:
-            - v1-node-dependencies-{{ checksum "yarn.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-node-dependencies-
-
-      - run: bin/yarn
-
-      - save_cache:
-          paths:
-            - ./node_modules
-          key: v1-node-dependencies-{{ checksum "yarn.lock" }}
-
-      - run: RAILS_ENV=test bundle exec rails webpacker:compile
+#      - restore_cache:
+#          keys:
+#            - v1-node-dependencies-{{ checksum "yarn.lock" }}
+#            # fallback to using the latest cache if no exact match is found
+#            - v1-node-dependencies-
+#
+#      - run: bin/yarn
+#
+#      - save_cache:
+#          paths:
+#            - ./node_modules
+#          key: v1-node-dependencies-{{ checksum "yarn.lock" }}
+#
+#      - run: RAILS_ENV=test bundle exec rails webpacker:compile
 
       # Database setup
       - run: bundle exec rake db:create
