@@ -8,5 +8,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
     puma_port = Capybara.current_session.server.port
     puts "Worker #{worker_number}'s puma port: #{puma_port}"
+
+    sleep 5
   end
 end
