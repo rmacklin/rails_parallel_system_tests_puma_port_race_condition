@@ -1,10 +1,12 @@
 require "application_system_test_case"
 
 class SampleSystemTest < ApplicationSystemTestCase
-  test "visiting the index" do
-    visit root_url
+  50.times do |i|
+    test "visiting the index #{i + 1}" do
+      visit root_url
 
-    assert_selector "h1", text: "Home#index"
+      assert_selector "h1", text: "Home#index"
+    end
   end
 
   test "visiting the index slow1" do
