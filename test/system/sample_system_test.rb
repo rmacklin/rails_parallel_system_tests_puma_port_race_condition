@@ -6,6 +6,7 @@ class SampleSystemTest < ApplicationSystemTestCase
       visit root_url
 
       assert_selector "h1", text: "Home#index"
+      assert_selector "p", text: "Worker number: #{expected_worker_number}"
     end
   end
 
@@ -15,6 +16,7 @@ class SampleSystemTest < ApplicationSystemTestCase
     sleep 1
 
     assert_selector "h1", text: "Home#index"
+    assert_selector "p", text: "Worker number: #{expected_worker_number}"
   end
 
   test "visiting the index slow2" do
@@ -23,6 +25,7 @@ class SampleSystemTest < ApplicationSystemTestCase
     sleep 2
 
     assert_selector "h1", text: "Home#index"
+    assert_selector "p", text: "Worker number: #{expected_worker_number}"
   end
 
   test "visiting the index slow3" do
@@ -31,6 +34,7 @@ class SampleSystemTest < ApplicationSystemTestCase
     sleep 3
 
     assert_selector "h1", text: "Home#index"
+    assert_selector "p", text: "Worker number: #{expected_worker_number}"
   end
 
   test "visiting the index slow4" do
@@ -39,6 +43,7 @@ class SampleSystemTest < ApplicationSystemTestCase
     sleep 1
 
     assert_selector "h1", text: "Home#index"
+    assert_selector "p", text: "Worker number: #{expected_worker_number}"
   end
 
   test "visiting the index slow5" do
@@ -47,6 +52,7 @@ class SampleSystemTest < ApplicationSystemTestCase
     sleep 2
 
     assert_selector "h1", text: "Home#index"
+    assert_selector "p", text: "Worker number: #{expected_worker_number}"
   end
 
   test "visiting the index slow6" do
@@ -55,5 +61,12 @@ class SampleSystemTest < ApplicationSystemTestCase
     sleep 3
 
     assert_selector "h1", text: "Home#index"
+    assert_selector "p", text: "Worker number: #{expected_worker_number}"
+  end
+
+  private
+
+  def expected_worker_number
+    Rails.application.config.parallel_test_worker_number
   end
 end
