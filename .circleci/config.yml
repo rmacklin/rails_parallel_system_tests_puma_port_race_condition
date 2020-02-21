@@ -54,6 +54,15 @@ jobs:
 
       # run tests!
       - run: bin/rails test:system
+      - run: bin/rails test:system
+      - run: bin/rails test:system
+      - run: bin/rails test:system
+      - run: bin/rails test:system
+      - run: bin/rails test:system
+      - run: bin/rails test:system
+      - run: bin/rails test:system
+      - run: bin/rails test:system
+      - run: bin/rails test:system
 
       # collect reports
       - store_test_results:
