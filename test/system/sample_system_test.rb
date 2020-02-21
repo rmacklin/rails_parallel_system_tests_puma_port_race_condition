@@ -22,7 +22,7 @@ class SampleSystemTest < ApplicationSystemTestCase
   test "visiting the index slow2" do
     visit root_url
 
-    sleep 2
+    sleep 0.5
 
     assert_selector "h1", text: "Home#index"
     assert_selector "p", text: "Worker number: #{expected_worker_number}"
@@ -40,7 +40,7 @@ class SampleSystemTest < ApplicationSystemTestCase
   test "visiting the index slow4" do
     visit root_url
 
-    sleep 2
+    sleep 0.5
 
     assert_selector "h1", text: "Home#index"
     assert_selector "p", text: "Worker number: #{expected_worker_number}"
